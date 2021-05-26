@@ -17,6 +17,7 @@ test('Add new task', async t => {
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
+  await HomePage.DoItTask();
 });
 
 test('Add several tasks', async t => {
@@ -24,4 +25,5 @@ test('Add several tasks', async t => {
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
+  await HomePage.DoItTask();
 });
