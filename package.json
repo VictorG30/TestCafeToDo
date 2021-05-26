@@ -1,0 +1,21 @@
+{
+  "name": "testcafe",
+  "version": "1.0.0",
+  "description": "Test cafe project",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./PageObjectModel/Tests"
+  },
+  "author": "Victor Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "faker": "^5.5.3",
+    "testcafe": "*"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
