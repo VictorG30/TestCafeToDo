@@ -4,14 +4,15 @@
   "description": "Test cafe project",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome:headless ./PageObjectModel/Tests"
+    "test": "testcafe ./PageObjectModel/Tests"
   },
   "author": "Victor Garcia",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
     "faker": "^5.5.3",
-    "testcafe": "*"
+    "testcafe": "*",
+    "testcafe-browser-provider-browserstack": "*"
   },
   "devDependencies": {
     "eslint": "^7.25.0",

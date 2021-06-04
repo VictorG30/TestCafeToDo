@@ -1,0 +1,3 @@
+{
+    "browsers":["browserstack:firefox@88.0:Windows 10","browserstack:chrome@91.0:Windows 10"]
+}
