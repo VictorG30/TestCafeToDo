@@ -11,6 +11,7 @@ class HomePage {
     this.TxtNameTask = Selector('.DraftEditor-editorContainer > .notranslate.public-DraftEditor-content');
     this.BtnAddTask = Selector('.task_editor__form_actions > .ist_button.ist_button_red');
     this.BtnDoneTask = Selector('.task_checkbox');
+    this.BtnCloseModal = Selector('.close');
   }
 
   async AddTask(numTask) {
@@ -24,6 +25,7 @@ class HomePage {
 
     for (let j = 0; j < numTask; j++) {
       if (j === 0) {
+        await t.click(this.BtnCloseModal);
         await t.click(this.RadioButtonAddTask);
         await t.typeText(this.TxtNameTask, lista[j], { paste: true });
         await t.click(this.BtnAddTask);
