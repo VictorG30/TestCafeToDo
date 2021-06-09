@@ -1,14 +1,9 @@
-import { Selector, t } from 'testcafe'
-
+import { Selector, t } from 'testcafe';
 
 class WelcomePage {
-    constructor(){
-        this.BtnIniciarSesion = Selector('._3XsmI a[href="/users/showlogin"]')
-
-    }
-
-
-
+  constructor() {
+    this.BtnIniciarSesion = Selector('._3XsmI a[href="/users/showlogin"]');
+  }
 }
 
-export default new WelcomePage()
+export default new WelcomePage();

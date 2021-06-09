@@ -25,7 +25,7 @@ class HomePage {
 
     for (let j = 0; j < numTask; j++) {
       if (j === 0) {
-        await t.click(this.BtnCloseModal);
+        //await t.click(this.BtnCloseModal);
         await t.click(this.RadioButtonAddTask);
         await t.typeText(this.TxtNameTask, lista[j], { paste: true });
         await t.click(this.BtnAddTask);

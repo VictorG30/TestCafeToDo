@@ -4,12 +4,12 @@ import LoginPage from '../Pages/LoginPage';
 import { CREDENTIALS } from '../Data/Constant';
 import SideBarPage from '../Pages/SideBarPage';
 
-fixture('Login feature testing')
+fixture.only('Login feature testing')
   .page`https://todoist.com/es`;
 
 test('Login User Valid', async (t) => {
   await LoginPage.LoginSubmit(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
-  await t.expect(SideBarPage.BtnAvatar.exists).ok();
+  await t.expect(SideBarPage.BtnAvatar.exists).ok('', { timeout: 100000 });
 });
 
 test('Login Invalid', async (t) => {
