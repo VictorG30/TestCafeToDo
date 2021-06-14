@@ -13,6 +13,7 @@ fixture('Add Tasks')
   });
 
 test('Add new task', async t => {
+  await HomePage.HandleConfHour();
   const NameTaskAdd = await HomePage.AddTask(1);
   const NamesTasksUI = await HomePage.GetElementsText();
 
@@ -21,6 +22,7 @@ test('Add new task', async t => {
 });
 
 test('Add several tasks', async t => {
+  await HomePage.HandleConfHour();
   const NameTaskAdd = await HomePage.AddTask(10);
   const NamesTasksUI = await HomePage.GetElementsText();
 

@@ -3,8 +3,8 @@ import { Selector, t } from 'testcafe';
 class SideBarPage {
   constructor() {
     this.BtnMenu = Selector('#react-burger-menu-btn');
-    this.OptionLogOut = Selector('#id-a5qqvk-9');
-    this.BtnAvatar = Selector('.user_avatar', { timeout: 1000000 });
+    this.OptionLogOut = Selector('[role="menuitem"]').withText('Cerrar sesión');
+    this.BtnAvatar = Selector('.user_avatar', { timeout: 5000 });
   }
 
   async LogOut() {

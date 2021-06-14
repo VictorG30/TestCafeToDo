@@ -14,6 +14,12 @@ class HomePage {
     this.BtnCloseModal = Selector('.close');
   }
 
+  async HandleConfHour() {
+    try {
+      await t.click(this.BtnCloseModal);
+    } catch { }
+  }
+
   async AddTask(numTask) {
     const faker = require('faker');
     const lista = new Array();
@@ -25,7 +31,6 @@ class HomePage {
 
     for (let j = 0; j < numTask; j++) {
       if (j === 0) {
-        //await t.click(this.BtnCloseModal);
         await t.click(this.RadioButtonAddTask);
         await t.typeText(this.TxtNameTask, lista[j], { paste: true });
         await t.click(this.BtnAddTask);
@@ -52,11 +57,11 @@ class HomePage {
   }
 
   async DoItTask() {
-    const ItemsTask = await Selector('.task_checkbox');
+    const ItemsTask = await Selector('button.task_checkbox', { timeout: 10000 });
     let count = await ItemsTask.count;
 
     while (count > 1) {
-      await t.click(ItemsTask.nth(0));
+      await t.click(ItemsTask.nth(0), { timeout: 100000 });
       count = await ItemsTask.count;
     }
   }
