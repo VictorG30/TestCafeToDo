@@ -61,7 +61,7 @@ class HomePage {
     let count = await ItemsTask.count;
 
     while (count > 1) {
-      await t.click(ItemsTask.nth(0), { timeout: 100000 });
+      await t.click(ItemsTask.nth(0), { timeout: 10000 });
       count = await ItemsTask.count;
     }
   }
