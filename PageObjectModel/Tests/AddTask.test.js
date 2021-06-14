@@ -6,7 +6,7 @@ import LoginPage from '../Pages/LoginPage';
 import { CREDENTIALS } from '../Data/Constant';
 import HomePage from '../Pages/HomePage';
 
-fixture('Add Tasks')
+fixture.only('Add Tasks')
   .page `https://todoist.com/es`
   .beforeEach(async t=> {
     await LoginPage.LoginSubmit(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
@@ -14,18 +14,18 @@ fixture('Add Tasks')
 
 test('Add new task', async t => {
   await HomePage.HandleConfHour();
+  await HomePage.DoItTask();
   const NameTaskAdd = await HomePage.AddTask(1);
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
-  await HomePage.DoItTask();
 });
 
 test('Add several tasks', async t => {
   await HomePage.HandleConfHour();
+  await HomePage.DoItTask();
   const NameTaskAdd = await HomePage.AddTask(10);
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
-  await HomePage.DoItTask();
 });

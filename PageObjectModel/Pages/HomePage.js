@@ -12,6 +12,8 @@ class HomePage {
     this.BtnAddTask = Selector('.task_editor__form_actions > .ist_button.ist_button_red');
     this.BtnDoneTask = Selector('.task_checkbox');
     this.BtnCloseModal = Selector('.close');
+    this.DoneTask = Selector('.item_detail .task_checkbox__circle');
+    this.BtnCloseModalTask = Selector('.item_detail .icon_close');
   }
 
   async HandleConfHour() {
@@ -57,11 +59,13 @@ class HomePage {
   }
 
   async DoItTask() {
-    const ItemsTask = await Selector('button.task_checkbox', { timeout: 10000 });
+    const ItemsTask = await Selector('.task_list_item__content__content_wrapper', { timeout: 10000 });
     let count = await ItemsTask.count;
 
-    while (count > 1) {
+    while (count > 0) {
       await t.click(ItemsTask.nth(0), { timeout: 10000 });
+      await t.click(this.DoneTask);
+      await t.click(this.BtnCloseModalTask);
       count = await ItemsTask.count;
     }
   }
