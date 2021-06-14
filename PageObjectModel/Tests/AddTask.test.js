@@ -6,7 +6,7 @@ import LoginPage from '../Pages/LoginPage';
 import { CREDENTIALS } from '../Data/Constant';
 import HomePage from '../Pages/HomePage';
 
-fixture.only('Add Tasks')
+fixture('Add Tasks')
   .page `https://todoist.com/es`
   .beforeEach(async t=> {
     await LoginPage.LoginSubmit(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
