@@ -4,7 +4,7 @@ import LoginPage from '../Pages/LoginPage';
 import { CREDENTIALS } from '../Data/Constant';
 import SideBarPage from '../Pages/SideBarPage';
 
-fixture('Login feature testing')
+fixture.only('Login feature testing')
   .page`https://todoist.com/es`;
 
 test('Login User Valid', async (t) => {
