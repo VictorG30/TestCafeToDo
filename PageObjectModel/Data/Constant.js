@@ -4,7 +4,7 @@ dotenv.config();
 
 export const CREDENTIALS = {
   VALID_USER: {
-    USERNAME: 'vekaerre@gmail.com',
+    USERNAME: process.env.USERNAME,
     PASSWORD: 'aMm,5VuF,%CNFMk',
   },
   INVALID_USER: {
