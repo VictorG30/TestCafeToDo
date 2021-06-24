@@ -4,19 +4,19 @@
   "description": "Test cafe project",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe ./PageObjectModel/Tests"
+    "test": "testcafe chrome ./PageObjectModel/Tests"
   },
   "author": "Victor Garcia",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "faker": "^5.5.3",
+    "dotenv": "8.2.0",
+    "faker": "5.5.3",
     "testcafe": "*",
     "testcafe-browser-provider-browserstack": "*"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint": "7.25.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.22.1"
   }
 }

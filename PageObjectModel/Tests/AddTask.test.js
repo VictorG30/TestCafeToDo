@@ -14,18 +14,20 @@ fixture('Add Tasks')
 
 test('Add new task', async t => {
   await HomePage.HandleConfHour();
+  await HomePage.DoItTask();
+
   const NameTaskAdd = await HomePage.AddTask(1);
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
-  await HomePage.DoItTask();
 });
 
 test('Add several tasks', async t => {
   await HomePage.HandleConfHour();
+  await HomePage.DoItTask();
+
   const NameTaskAdd = await HomePage.AddTask(10);
   const NamesTasksUI = await HomePage.GetElementsText();
 
   await t.expect(NameTaskAdd).eql(NamesTasksUI);
-  await HomePage.DoItTask();
 });
